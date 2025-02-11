@@ -5,17 +5,17 @@ import {
   MAX_EXECUTION_TIME,
   P_ORIG,
   S_ORIG,
-} from "./constant.js";
-import { nextTick } from "./utils.js";
+} from "./constant";
+import { nextTick } from "./utils";
 
 // A base64 implementation for the bcrypt algorithm. This is partly non-standard.
 
-const encipher = (
-  lr: Int32Array,
+const encipher = <T extends Int32Array | number[]>(
+  lr: T,
   off: number,
-  P: Int32Array,
-  S: Int32Array,
-): Int32Array => {
+  P: Int32Array | number[],
+  S: Int32Array | number[],
+): T => {
   // This is our bottleneck: 1714/1905 ticks / 90% - see profile.txt
   let n: number;
   let l = lr[off];

@@ -1,106 +1,47 @@
 {
-  "name": "bcrypt-ts",
-  "version": "5.0.3",
-  "description": "bcrypt written in typescript",
+  "name": "@esm-pack/bcrypt",
+  "version": "5.0.4",
+  "description": "bcrypt esm package build from bcrypt-ts",
   "keywords": [
     "bcrypt",
-    "bcryptjs"
+    "bcryptjs",
+    "bcrypt-ts",
+    "esm-pack"
   ],
   "bugs": {
-    "url": "https://github.com/Mister-Hope/bcrypt-ts/issues"
+    "url": "https://github.com/esm-pack/bcrypt/issues"
   },
   "license": "MIT",
   "author": {
-    "name": "Mr.Hope",
-    "email": "mister-hope@outlook.com",
-    "url": "https://mister-hope.com"
+    "name": "baskwind",
+    "email": "baskwind@163.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Mister-Hope/bcrypt-ts.git"
+    "url": "git@github.com:esm-pack/bcrypt.git"
   },
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/node.d.mts",
-      "browser": "./dist/browser.mjs",
-      "node": "./dist/node.mjs",
-      "import": "./dist/node.mjs",
-      "require": "./dist/node.cjs",
-      "default": "./dist/node.cjs"
-    },
-    "./browser": {
-      "types": "./dist/browser.d.mts",
-      "import": "./dist/browser.mjs",
-      "require": "./dist/browser.cjs",
-      "default": "./dist/browser.mjs"
-    },
-    "./node": {
-      "types": "./dist/node.d.mts",
-      "import": "./dist/node.mjs",
-      "require": "./dist/node.cjs",
-      "default": "./dist/node.cjs"
-    }
-  },
-  "main": "./dist/node.cjs",
-  "module": "./dist/node.mjs",
-  "browser": "./dist/browser.mjs",
-  "types": "./dist/node.d.mts",
+  "main": "./dist/node/index.mjs",
+  "module": "./dist/node/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "browser": "./dist/browser/index.mjs",
   "files": [
     "dist"
   ],
   "scripts": {
-    "bench": "vitest bench",
-    "build": "rollup -c rollup.config.ts --configPlugin esbuild",
-    "changelog": " commit-and-tag-version --skip.bump --skip.commit --skip.tag",
-    "clean": "rimraf dist",
-    "commit": "pnpm git-cz",
-    "dev": "rollup -c rollup.config.ts --configPlugin esbuild -w",
-    "lint": "pnpm lint:eslint && pnpm lint:prettier",
-    "lint:eslint": "eslint --fix .",
-    "lint:prettier": "prettier --check --write .",
-    "prepare": "husky",
-    "prepublish": "pnpm clean && pnpm build",
-    "test": "vitest --coverage"
-  },
-  "nano-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "*.{js,ts}": "eslint --fix"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-git"
-    }
+    "build": "tsx script/build.ts"
   },
   "devDependencies": {
-    "@codecov/rollup-plugin": "1.8.0",
-    "@commitlint/cli": "19.7.1",
-    "@commitlint/config-conventional": "19.7.1",
-    "@rollup/plugin-alias": "5.1.1",
-    "@rollup/plugin-replace": "6.0.2",
     "@types/node": "22.13.1",
-    "@vitest/coverage-istanbul": "3.0.5",
-    "commit-and-tag-version": "12.5.0",
-    "cz-git": "1.11.0",
-    "eslint": "9.20.0",
-    "eslint-config-mister-hope": "0.4.1",
-    "husky": "9.1.7",
-    "nano-staged": "0.8.0",
-    "prettier": "3.5.0",
-    "rimraf": "6.0.1",
-    "rollup": "4.34.6",
-    "rollup-plugin-dts": "6.1.1",
-    "rollup-plugin-esbuild": "6.2.0",
+    "tsx": "^4.19.2",
     "typescript": "5.7.3",
-    "vitest": "3.0.5"
+    "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0"
   },
   "packageManager": "pnpm@10.2.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
     ]
-  },
-  "engines": {
-    "node": ">=18"
   }
 }

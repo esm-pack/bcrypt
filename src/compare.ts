@@ -1,5 +1,5 @@
-import { hash as hashAsync, hashSync } from "./hash.js";
-import { nextTick } from "./utils.js";
+import { hash as hashAsync, hashSync } from "./hash";
+import { nextTick } from "./utils";
 
 /**
  * Synchronously tests a string against a hash.

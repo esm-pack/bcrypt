@@ -32,7 +32,7 @@
  * see: https://github.com/dcodeIO/bcrypt.js for details
  */
 
-export * from "./compare.js";
-export * from "./hash.js";
-export * from "./helpers.js";
-export * from "./salt.js";
+export * from "./compare";
+export * from "./hash";
+export * from "./helpers";
+export * from "./salt";

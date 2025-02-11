@@ -1,12 +1,12 @@
-import { decodeBase64, encodeBase64 } from "./base64.js";
+import { decodeBase64, encodeBase64 } from "./base64";
 import {
   BCRYPT_SALT_LEN,
   C_ORIG,
   GENERATE_SALT_DEFAULT_LOG2_ROUNDS,
-} from "./constant.js";
-import { crypt } from "./crypt.js";
-import { genSalt, genSaltSync } from "./salt.js";
-import { stringToBytes } from "./utils.js";
+} from "./constant";
+import { crypt } from "./crypt";
+import { genSalt, genSaltSync } from "./salt";
+import { stringToBytes } from "./utils";
 
 /**
  * Internally hashes a string.

@@ -1,4 +1,4 @@
-import { encodeUTF16toUTF8 } from "./utfx.js";
+import { encodeUTF16toUTF8 } from "./utfx";
 
 /**
  * @private
@@ -12,7 +12,7 @@ export const nextTick =
       ? setImmediate
       : typeof process === "object" && typeof process.nextTick === "function"
         ? // eslint-disable-next-line @typescript-eslint/unbound-method
-          process.nextTick
+        process.nextTick
         : setTimeout;
 
 /**

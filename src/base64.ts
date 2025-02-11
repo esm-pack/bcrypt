@@ -1,4 +1,4 @@
-import { BASE64_CODE, BASE64_INDEX } from "./constant.js";
+import { BASE64_CODE, BASE64_INDEX } from "./constant";
 
 /**
  * Encodes a byte array to base64 with up to length bytes of input, using the custom bcrypt alphabet.
